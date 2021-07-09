@@ -3,7 +3,7 @@ let x = 10
 let z = 12
 
 function compareToTen(n) {
-  if (n == 10) {
+  if (n === 10) {
     console.log("equal to 10")
   } else if (n < 10) {
     console.log("less than 10")
