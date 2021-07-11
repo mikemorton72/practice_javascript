@@ -29,7 +29,7 @@ function numbersTimesThree(array) {
   var outputArray = [];
   array.forEach(function (value) {
     outputArray.push(value * 3);
-  })
+  });
   return outputArray;
 }
 console.log(numbersTimesThree([1, 2, 3]));
