@@ -39,7 +39,6 @@ console.log(factorial(5));
 
 // # Write a method that accepts one argument - an array of numbers that are in ascending order. The method that returns a new array with the same values in descending order. However, do not use the "reverse" method built into Ruby.
 function reverseArray(array) {
-  var index = array.length - 1;
   var outputArray = [];
   array.forEach(function (value) {
     outputArray.unshift(value);
@@ -61,13 +60,14 @@ function combinationSum(array1, array2) {
 }
 console.log(combinationSum([1, 5, 10], [100, 500, 1000]));
 
+
 // Bubble sort algorithm
 function bubbleSort(array) {
   var n = array.length;
   // eslint-disable-next-line no-constant-condition
   while (true) {
     var swapped = false;
-    for (var i = 0; (i < array.length - 1); i++) {
+    for (var i = 0; i < array.length - 1; i++) {
       if (array[i] > array[i + 1]) {
         var x = array[i];
         array[i] = array[i + 1];
@@ -82,3 +82,102 @@ function bubbleSort(array) {
   return array;
 }
 console.log(bubbleSort([10000, 5, 2, 1, 6, 2, 1, 200, 5000, 12, 15, 20]));
+
+
+// Write a function that takes in an array of numbers and returns its sum.
+function sumArray(array) {
+  return array.reduce((sum, currentValue) => sum += currentValue);
+}
+console.log(sumArray([4, 6, 5]));
+
+
+// Write a function that takes in an array of strings and returns the smallest string.
+function smallestString(strings) {
+  var smallest = strings[0];
+  strings.forEach(function (string) {
+    if (string.length < smallest.length) {
+      smallest = string;
+    }
+  });
+  return smallest;
+}
+console.log(smallestString(["aa", "bbb", "c", "hellothere"]));
+
+
+// Write a function that takes in an array of numbers and returns a new array with the numbers in reverse order. Already done, see above (reverseArray function)
+
+
+// Write a function that takes in an array of words and returns the number of words that begin with the letter “a”.
+function startsWithA(strings) {
+  var count = 0;
+  strings.forEach(function (string) {
+    if (string[0] === "a") {
+      count++;
+    }
+  });
+  return count;
+}
+console.log(startsWithA(["aaaa", "abcd", "cdaae", "queyiwop", "a"]));
+
+
+// Write a function that takes in an array of strings and joins them together to make a single string separated by commas.
+function addWithCommas(strings) {
+  var output = "";
+  strings.forEach(function (string) {
+    output += string + ",";
+  });
+  return output;
+}
+console.log(addWithCommas(["bill", "bob", "sue", "joe", "sally"]));
+
+
+// Write a function that takes in an array of numbers and returns the product of all the numbers (each number multiplied by each other). 
+function productOfNumbers(numbers) {
+  return numbers.reduce((product, number) => product *= number);
+}
+console.log(productOfNumbers([4, 3, 2]));
+
+
+// Write a function that takes in an array of numbers and returns the two smallest numbers.
+function twoSmallest(numbers) {
+  var smallest = [];
+  for (var i = 0; i < 2; i++) {
+    smallest.push(numbers[1]);
+    var index = 0;
+    var deleteAt = index;
+    numbers.forEach(function (number) {
+      if (number < smallest[i]) {
+        smallest[i] = number;
+        deleteAt = index;
+      }
+      index++;
+    });
+    numbers.splice(deleteAt, 1);
+  }
+  return smallest;
+}
+console.log(twoSmallest([1, 5, 2, 3, 1, 7]));
+
+
+// Write a function that takes in an array of numbers and returns a count of how many zeros are in the array.
+function numberOfZeros(numbers) {
+  return numbers.filter(number => number === 0).length;
+}
+console.log(numberOfZeros([0, 1, 4, 0, 3, 0]));
+
+
+
+// Write a function that takes in an array of numbers and returns true if all the numbers are bigger than 10, otherwise returns false.
+function allMoreThanTen(numbers) {
+  var allTrue = true;
+  numbers.forEach(function (number) {
+    if (number <= 10) {
+      allTrue = false;
+    }
+  });
+  return allTrue;
+}
+console.log(allMoreThanTen([11, 52, 98]));
+console.log(allMoreThanTen([1, 43, 2]));
+
+
