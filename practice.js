@@ -52,10 +52,10 @@ while (index <= 100) {
 }
 
 // // Write a method that prints out every other number from 1 to 100. (That is, 1, 3, 5, 7 … 99).
-var index = 1;
-while (index <= 100) {
-  console.log(index);
-  index += 2;
+var index1 = 1;
+while (index1 <= 100) {
+  console.log(index1);
+  index1 += 2;
 }
 
 // // Write a method that accepts an array of numbers as a parameter, and counts how many 55’s there are in the array.
@@ -97,9 +97,9 @@ console.log(itemAmounts);
 // Start with the hash: item_amounts = {chair: 5, table: 2}
 // You received 7 desks to sell. Change the hash to include desks.
 // The final result should be: {chair: 5, table: 2, desk: 7}
-var itemAmounts = { chair: 5, table: 2 };
-itemAmounts.desk = 7;
-console.log(itemAmounts);
+var itemAmounts1 = { chair: 5, table: 2 };
+itemAmounts1.desk = 7;
+console.log(itemAmounts1);
 
 // Write a method that accepts a number and returns its factorial.
 // For example, the factorial of 5 is 5 * 4 * 3 * 2 * 1 = 120.
